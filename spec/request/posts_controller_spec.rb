@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
     describe 'GET #index' do
-        before(:example) {get('/users')}
+        before(:example) {get('/users/3/posts')}
 
-        it 'returns http success' do
+        it 'gets list of post success' do
             expect(response).to have_http_status(:ok)
         end
 
@@ -13,14 +13,14 @@ RSpec.describe 'Users', type: :request do
         end
 
         it 'includes the correct text' do
-            expect(response.body).to include 'List of users.'
+            expect(response.body).to include 'List of posts for a given user.'
         end
     end
 
     describe 'GET #show' do
-        before(:example) {get('/users/2')}
+        before(:example) {get('/users/2/posts/3')}
 
-        it 'returns http success' do
+        it 'gets details of post success' do
             expect(response).to have_http_status(:ok)
         end
 
@@ -29,7 +29,7 @@ RSpec.describe 'Users', type: :request do
         end
 
         it 'includes the correct text' do
-            expect(response.body).to include('Show details of an user.')
+            expect(response.body).to include('Show details of post for given user.')
         end
     end
 end
