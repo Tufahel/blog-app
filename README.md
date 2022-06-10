@@ -23,8 +23,6 @@
 
 ## To get started:
   - Run `bundle install` to install the dependencies
-  - Run `irb` to run the code by pasting it in the terminal.
-  - run `rspec spec` to test the files.
   - Run `rubocop` to find and fix linters
 
 ## Author
