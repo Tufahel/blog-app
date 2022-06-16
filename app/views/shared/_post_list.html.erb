@@ -1,2 +1,5 @@
 Post: <%= "#{post_number}" %> <br>
-Text: <%= post.text %> <br>
+Text: <%= post.text.length < 100 && user_details ? post.text : "No post yet" %> <br>
+Comments: <%= post.comments.length %> <br>
+likes: <%= post.likes.length %> <br>
+
