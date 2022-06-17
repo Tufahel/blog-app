@@ -1,17 +1,19 @@
-<h1>Post</h1>
-<p>Show details of post for given user.</p>
+<div class="card p-2">
+    <div>
+        <h2 class="text-start">Post: <%= "##{@post.id + 1} by #{@post.user.name}" %></h2>
+        <p class="text-end"> Comments: <%= @comments.length %> Likes: <%= @likes.length %></p>
+    </div>
+    <%= @post.text %>
+</div>
 
-Id: <%= "#{@post.id + 1} by #{@post.user.name}" %> <br>
-Post: <%= @post.text %> <br>
-
-
-<% if @comments.length > 0 %>
+<div class="card mt-4">
+    <% if @comments.length > 0 %>
     <% @comments.each do |comment| %>
-        <br>
-        Time: <%= comment.updated_at %> <br>
-        Name: <%= comment.user.name %> <br>
-        Comment: <%= comment.text %> <br>
+        <div class="p-2">
+            <p><%= comment.user.name %>: <%= comment.text %></p>
+        </div>
     <% end %>
-<% else %>
-    No comment yet
-<% end %>
+</div>
+    <% else %>
+        No comment yet
+    <% end %>

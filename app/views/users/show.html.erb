@@ -1,7 +1,8 @@
-<h1>User</h1>
-<p>Show details of an user.</p>
-
 <%= render partial: "shared/user_list", locals: {user: @user} %>
+<div class="card p-2 mt-2 mb-2">
+    Bio: <br>
+    <%= @user.bio %>
+</div>
 
 <% if @user.recent_posts.length > 0 %>
     <% @user.recent_posts.each_with_index do |post, id| %>
@@ -10,6 +11,10 @@
         <% end %>
     <% end %>
 <% else %>
-    <%= "No post yet" %>
+    <%= "No posts yet" %>
 <% end %>
+
+<div class="text-center">
+    <button><%= link_to "See all posts", user_posts_path(@user.id) %></button>
+</div>
 <br>

@@ -1,3 +1,18 @@
-Post: <%= post.id %> <br>
+<%
+=begin%>
+ Post: <%= post.id %> <br>
 Text: <%= post.text.length < 100 ? post.text : "No post yet" %> <br>
+Comments: <% post.comments.length %> <br>
+Likes: <%post.likes.length %> <br> 
+<%
+=end%>
 
+<div class="card p-2 mb-2">
+    <h3>Post: #<%= post.id %></h3>
+    <div>
+        <p class="text-start"><%= post.text.length < 100 ? post.text : "No post yet" %></p>
+        <div class="text-end">
+            <p>Comments: <%= post.comments.length %> Likes: <%= post.likes.length %> </p>
+        </div>
+    </div>
+</div>
