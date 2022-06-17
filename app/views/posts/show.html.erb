@@ -5,7 +5,7 @@
     </div>
     <%= @post.text %>
 </div>
-
+Comments: 
 <div class="card mt-4 border-danger shadow p-3 mb-5 bg-white rounded">
     <% if @comments.length > 0 %>
     <% @comments.each do |comment| %>
@@ -17,3 +17,9 @@
     <% else %>
         No comment yet
     <% end %>
+
+<div>
+    <div>
+        <%= link_to "Add new comment", new_user_post_comment_path(user_id: @post.user_id, post_id: @post.id ), class: "btn btn-primary" %>
+    </div>
+</div>
