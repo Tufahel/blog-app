@@ -1,8 +1,10 @@
-<div class="d-flex justify-content-around mb-2">
-    <img src="<%= user.photo %>" alt="" width="200" height = "150" />
-    <div class="card w-75 p-2">
-        <h2 class="text-start"> Name: <%= user.name %> </h2>
-        <p class="text-end"> PostsCounter: <%= user.posts.count %> </p>
-    </div> 
-    <br>
+<div class="shadow p-3 mb-5 bg-white rounded">
+    <div class="d-flex justify-content-around mb-2">
+        <img class="card border-success" src="" alt="" width="200" height = "150" />
+        <div class="card w-75 p-2 border-success">
+            <h2 class="text-start"> Name: <%= user.name %> </h2>
+            <p class="text-end"> PostsCounter: <%= user.posts.count %> </p>
+        </div> 
+        <br>
+    </div>
 </div>

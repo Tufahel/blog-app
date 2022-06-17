@@ -7,8 +7,8 @@ Likes: <%post.likes.length %> <br>
 <%
 =end%>
 
-<div class="card p-2 mb-2">
-    <h3>Post: #<%= post.id %></h3>
+<div class="card p-2 mb-2 border-primary">
+    <h4>Post: #<%= post.id %></h4>
     <div>
         <p class="text-start"><%= post.text.length < 100 ? post.text : "No post yet" %></p>
         <div class="text-end">

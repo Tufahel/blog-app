@@ -1,12 +1,12 @@
-<div class="card p-2">
+<div class="card p-2 border-success shadow p-3 mb-5 bg-white rounded">
     <div>
-        <h2 class="text-start">Post: <%= "##{@post.id + 1} by #{@post.user.name}" %></h2>
+        <h4 class="text-start">Post: <%= "##{@post.id + 1} by #{@post.user.name}" %></h4>
         <p class="text-end"> Comments: <%= @comments.length %> Likes: <%= @likes.length %></p>
     </div>
     <%= @post.text %>
 </div>
 
-<div class="card mt-4">
+<div class="card mt-4 border-danger shadow p-3 mb-5 bg-white rounded">
     <% if @comments.length > 0 %>
     <% @comments.each do |comment| %>
         <div class="p-2">
