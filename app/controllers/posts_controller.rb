@@ -15,13 +15,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    @user= User.find(params[:user_id])
+    @user = User.find(params[:user_id])
     @post = @user.posts.new(post_params)
 
     if @post.save
       redirect_to user_path(id: @post.user_id)
     else
-      render :new, alert: "An error occured"
+      render :new, alert: 'An error occured while creating post'
     end
   end
 
