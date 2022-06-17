@@ -1,12 +1,3 @@
-<%
-=begin%>
- Post: <%= post.id %> <br>
-Text: <%= post.text.length < 100 ? post.text : "No post yet" %> <br>
-Comments: <% post.comments.length %> <br>
-Likes: <%post.likes.length %> <br> 
-<%
-=end%>
-
 <div class="card p-2 mb-2 border-primary">
     <h4>Post: #<%= post.id %></h4>
     <div>
