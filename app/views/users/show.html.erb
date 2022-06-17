@@ -1,2 +1,22 @@
-<h1>User</h1>
-<p>Show details of an user.</p>
+<%= render partial: "shared/user_list", locals: {user: @user} %>
+<div class="card p-2 mt-2 mb-2 border-info shadow p-3 mb-5 bg-white rounded">
+    Bio: <br>
+    <%= @user.bio %>
+</div>
+
+<div class="shadow p-3 mb-5 bg-white rounded">
+    <% if @user.recent_posts.length > 0 %>
+        <% @user.recent_posts.each_with_index do |post, id| %>
+            <%= link_to user_post_path(@user.id, post.id), :class => "link-color" do %>
+                <%= render partial: "shared/post_list", locals: {post: post, track: id} %>
+            <% end %>
+        <% end %>
+    <% else %>
+    <%= "No posts yet" %>
+    <% end %>
+</div>
+
+<div class="text-center">
+    <button><%= link_to "See all posts", user_posts_path(@user.id), :class => "link-color" %></button>
+</div>
+<br>
