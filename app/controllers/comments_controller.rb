@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     @comment.post_id = @post.id
 
     if @comment.save
-      redirect_to user_post_path(user_id: @post.user_id, id: @post.id)
+      redirect_to user_post_path(user_id: @post.user_id, id: @post.id), notice: 'Your comment is addedd'
     else
       render :new, alert: 'An error occurred while creating comment'
     end

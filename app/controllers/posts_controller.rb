@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     @post.likes_counter = 0
 
     if @post.save
-      redirect_to user_path(id: @post.user_id)
+      redirect_to user_path(id: @post.user_id), notice: 'Your post created successfully'
     else
       render :new, alert: 'An error occured while creating post'
     end
