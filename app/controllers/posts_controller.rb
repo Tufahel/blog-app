@@ -17,6 +17,8 @@ class PostsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @post = @user.posts.new(post_params)
+    @post.comment_counter = 0
+    @post.likes_counter = 0
 
     if @post.save
       redirect_to user_path(id: @post.user_id)
