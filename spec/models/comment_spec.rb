@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Comment, type: :model do
   describe 'Spec for comment model' do
     before(:each) do
-      @user = User.new(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.', posts_counter: 0)
+      @user = User.new(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.',
+                       posts_counter: 0)
       @post = Post.new(user: @user, title: 'Hello', text: 'This is my first post', likes_counter: 0, comment_counter: 0)
       @comment = Comment.new(text: 'c1', user_id: 2, post_id: 2)
     end
@@ -23,4 +24,4 @@ RSpec.describe Comment, type: :model do
       expect(@comment).to_not be_valid
     end
   end
-end 
+end

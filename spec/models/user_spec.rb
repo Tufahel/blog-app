@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'Spec for user model' do
     before(:each) do
-      @user = User.new(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.', posts_counter: 0)
+      @user = User.new(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.',
+                       posts_counter: 0)
     end
 
     it 'Name must not blank' do
@@ -25,4 +26,4 @@ RSpec.describe User, type: :model do
       expect(@user).to be_valid
     end
   end
-end 
+end
