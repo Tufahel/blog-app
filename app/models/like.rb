@@ -3,6 +3,6 @@ class Like < ApplicationRecord
   belongs_to :post
 
   def update_like_counter
-    post.increment!(:LikesCounter)
+    post.increment!(:posts_counter)
   end
 end
