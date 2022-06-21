@@ -20,10 +20,14 @@ class PostsController < ApplicationController
     @post.comment_counter = 0
     @post.likes_counter = 0
 
-    if @post.save
-      redirect_to user_path(id: @post.user_id), notice: 'Your post created successfully'
+    if @post.text.size.positive?
+      if @post.save
+        redirect_to user_path(id: @post.user_id), notice: 'Your post created successfully'
+      else
+        render :new, alert: 'An error occured while creating post'
+      end
     else
-      render :new, alert: 'An error occured while creating post'
+      redirect_to new_user_post_url, alert: 'You forget to add any post.'
     end
   end
 
