@@ -1,7 +1,7 @@
 <div class="card p-2 mb-2 border-primary">
     <h4>Post: #<%= post.id %></h4>
     <div>
-        <p class="text-start"><%= post.text.length < 100 ? post.text : "No post yet" %></p>
+        <p class="text-start"><%= post.text %></p>
         <div class="text-end">
             <p>Comments: <%= post.comments.length %> Likes: <%= post.likes.length %> </p>
         </div>
