@@ -2,3 +2,19 @@
   color: #000;
   text-decoration: none;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.field {
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.actions {
+  margin-bottom: 1rem;
+}
