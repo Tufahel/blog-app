@@ -1,10 +1,10 @@
 <div class="card p-2 border-success shadow p-3 mb-5 bg-white rounded">
     <div>
-        <h4 class="text-start">Post: <%= "##{@post.id + 1} by #{@post.user.name}" %></h4>
+        <h4 class="text-start">Post: <%= "##{@post.id} by #{@post.user.name}" %></h4>
         <p class="text-end"> Comments: <%= @comments.length %> Likes: <%= @likes.length %></p>
     </div>
     <%= @post.text %>
-    <%= button_to "Delete post" , user_posts_path(@post.user_id), method: :delete %>
+    <%= button_to "Delete post" , user_posts_path(post_id: @post.user_id, id: @post.id), method: :delete %>
 </div>
 <div>
     <div class="d-flex justify-content-center gap-4">

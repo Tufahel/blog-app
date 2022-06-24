@@ -5,9 +5,10 @@ class Ability
     user ||= User.new
     can :read, Post
     can :read, Comment
+    can :delete, Post
     return unless user.present?
 
-    can :delete, Post, user: user
+    can :manage, Post, user: user
     can :manage, Comment, user: user
     can :create, Comment
     can :create, Like
