@@ -4,6 +4,7 @@
         <p class="text-end"> Comments: <%= @comments.length %> Likes: <%= @likes.length %></p>
     </div>
     <%= @post.text %>
+    <%= button_to "Delete post" , user_posts_path(@post.user_id), method: :delete %>
 </div>
 <div>
     <div class="d-flex justify-content-center gap-4">
@@ -20,6 +21,7 @@ Comments:
         <div class="p-2">
             <p><%= comment.user.name %>: <%= comment.text %></p>
         </div>
+        <%= button_to "Delete comment", user_post_comment_path(post_id: @post.id, id: comment.id), method: :delete %>
     <% end %>
 </div>
     <% else %>
