@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments, :likes)
@@ -28,6 +29,17 @@ class PostsController < ApplicationController
       end
     else
       redirect_to new_user_post_url, alert: 'You forget to add any post.'
+    end
+  end
+
+  def destroy
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
+    @post.destroy
+    if @post.destroy
+      redirect_to user_path(params[:user_id])
+    else
+      redirect_to user_posts_path(params[:user_id], params[:id])
     end
   end
 
