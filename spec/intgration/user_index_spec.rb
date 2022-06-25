@@ -31,7 +31,7 @@ RSpec.describe 'Testing user index page', type: :feature do
   end
 
   scenario 'See profile picture for each user' do
-    expect(page.first('img')['src']).to have_content "pic.png"
+    expect(page.first('img')['src']).to have_content 'pic.png'
   end
 
   scenario 'See the number of posts each user has written' do

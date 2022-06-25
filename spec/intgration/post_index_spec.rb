@@ -22,7 +22,7 @@ RSpec.describe 'Posts show page', type: :feature do
       expect(page).to have_content('2')
     end
     scenario 'I can see the posts title.' do
-        expect(page).to have_content 'Title'
+      expect(page).to have_content 'Title'
     end
     scenario 'I can see who wrote the post' do
       expect(page).to have_content 'Tufahel'
@@ -34,11 +34,11 @@ RSpec.describe 'Posts show page', type: :feature do
       expect(page).to have_content 'Likes: 1'
     end
     scenario 'I can see the post comments.' do
-        expect(page).to have_content 'First comment'
-        expect(page).to have_content 'Second comment'
+      expect(page).to have_content 'First comment'
+      expect(page).to have_content 'Second comment'
     end
     scenario 'I can see the post comments counter.' do
-        expect(page).to have_content 'Comments: 2'
+      expect(page).to have_content 'Comments: 2'
     end
   end
 end
