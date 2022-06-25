@@ -1,6 +1,7 @@
 <div class="card p-2 border-success shadow p-3 mb-5 bg-white rounded">
     <div>
         <h4 class="text-start">Post: <%= "##{@post.id} by #{@post.user.name}" %></h4>
+        <p class="text-start text-primary">Post Title: <%= "#{@post.title}" %></p>
         <p class="text-end"> Comments: <%= @comments.length %> Likes: <%= @likes.length %></p>
     </div>
     <%= @post.text %>
