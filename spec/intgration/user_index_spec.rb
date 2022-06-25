@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe 'Testing user index page', type: :feature do
   before(:each) do
-    @first = User.create(name: 'Tufahel', photo: 'pic1.jpg', bio: 'Developer.',
+    @first = User.create(name: 'Tufahel', photo: 'pic.png', bio: 'Developer.',
                          email: 'tufahel97@gmail.com',
                          password: '1234abc', confirmed_at: Time.now,
                          posts_counter: 0, role: 'admin')
 
-    @second = User.create(name: 'Ahmed', photo: 'pic.jpg',
+    @second = User.create(name: 'Ahmed', photo: 'pic1.jpg',
                           bio: 'Student.', email: 'ahmed@gmail.com',
                           password: '456abcd', confirmed_at: Time.now,
                           posts_counter: 0, role: 'admin')
@@ -31,7 +31,7 @@ RSpec.describe 'Testing user index page', type: :feature do
   end
 
   scenario 'See profile picture for each user' do
-    expect(page.first('img')['src']).to have_content "pic1.jpg"
+    expect(page.first('img')['src']).to have_content "pic.png"
   end
 
   scenario 'See the number of posts each user has written' do
